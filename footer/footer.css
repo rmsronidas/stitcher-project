@@ -1,0 +1,171 @@
+/* ==========================================================================
+   STITCHER AGENCY COMPACT FOOTER
+   ========================================================================== */
+
+/* --- Footer Outer Wrapper --- */
+.site-footer {
+    padding: 30px 20px; /* Reduced vertical padding to make it less bulky */
+    background-color: #0e1317; /* Matches your site's dark background variable */
+}
+
+/* --- Main Curved Container --- */
+.footer-container {
+    /* Branding Gradient */
+    background: linear-gradient(135deg, #78a88e 0%, #a7d1b8 100%);
+    border-radius: 25px; /* Tighter curves for a more compact feel */
+    padding: 30px 40px; /* Reduced top/bottom padding from 50px to 30px */
+    display: grid;
+    grid-template-columns: 1.2fr 3.5fr auto; /* Balanced columns for Branding | Nav | Socials */
+    gap: 30px;
+    color: #ffffff;
+    align-items: start;
+}
+
+/* --- Left Column: Branding & Newsletter --- */
+.footer-logo {
+    width: 110px; /* Scaled down logo width */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.newsletter-text {
+    font-size: 14px; /* Slightly smaller for a tighter fit */
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 13px;
+    color: #4a5568;
+}
+
+.btn-subscribe {
+    background: linear-gradient(180deg, #5c7c6e 0%, #3e4d44 100%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 13px;
+    transition: transform 0.2s ease;
+}
+
+.btn-subscribe:hover {
+    transform: translateY(-1px);
+}
+
+.privacy-note {
+    font-size: 9px; /* Small footprint for legal text */
+    line-height: 1.4;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.privacy-note a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-email {
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* --- Center Column: Navigation --- */
+.footer-nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.nav-col h4 {
+    font-size: 11px; /* Smaller heading */
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-col ul li {
+    margin-bottom: 4px; /* Tightened spacing to reduce column height */
+}
+
+.nav-col ul li a {
+    font-size: 10px; /* Clean, small navigation text */
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+
+.nav-col ul li a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* --- Right Column: Social Grid --- */
+.footer-socials {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.footer-socials a {
+    width: 30px; /* Compact circular icons */
+    height: 30px;
+    background: #1a1e21;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 12px;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.footer-socials a:hover {
+    transform: scale(1.1);
+    background: #2d3748;
+}
+
+/* --- Responsive Layout (Mobile/Tablet) --- */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+    
+    .footer-nav {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .footer-socials {
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: start;
+        width: fit-content;
+        margin-top: 10px;
+    }
+}
