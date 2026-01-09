@@ -4,57 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stitcher Agency</title>
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="../footer/footer.css">
     <link rel="stylesheet" href="realtime.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
- <header class="site-header">
-    <div class="top-bar">
-        <div class="contact">support@stitcherageny.com</div>
-        <div class="info-right">
-            <span>MON - FRI : 9.00 AM - 5.00 PM</span>
-            <span style="margin: 0 10px;">|</span>
-            <span class="social-links">
-                FOLLOW G I F IN YT
-            </span>
-        </div>
-    </div>
 
-  <nav class="main-nav">
-    <div class="nav-container">
-        <div class="brand">
-            <a href="../index.html"><img src="logo.png" class="logo" alt="Logo"></a> 
-        </div>
+<div id="site-header">
+    <!-- Header will be loaded here -->
+</div>
+<main class="realtime-page">
+  <!-- all realtime content -->
 
-        <div class="mobile-menu-toggle" id="menu-icon">
-            <i class="fas fa-bars"></i>
-        </div>
 
-        <div class="nav-center" id="nav-menu">
-            <a href="#" class="pill active">REAL TIME</a>
-            <a href="#" class="pill active">CUSTOM</a>
-            
-            <div class="dropdown">
-                 <a href="#" class="pill active">DESIGN STUDIO ▾</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">SEWING PATTERN</a></li>
-                    <li><a href="#">3D DESIGN</a></li>
-                    <li><a href="#">TECH PACK</a></li>
-                    <li><a href="#">3D DESIGN</a></li>
-                    <li><a href="#">TECH PACK</a></li>
-                </ul>
-            </div>
-            
-            <a href="#" class="pill active">SUPPORT</a> 
-            <a href="#" class="pill active">STUDY HUB</a> 
-            <a href="../request-submit/index.html" class="pill btn-demo">BOOK A 15 MINUTE DEMO</a>
-        </div>
-
-        <div class="nav-right"></div>
-    </div>
-</nav>
-</header>
 <section class="realtime-hero">
     <div class="realtime-container">
         <div class="brand-logo">
@@ -240,76 +204,36 @@
         </div>
     </div>
 </section>
-
-<footer class="site-footer">
-    <div class="footer-container">
-        <div class="footer-branding">
-            <img src="logo.png" alt="Stitcher Logo" class="footer-logo">
-            <p class="newsletter-text">Join our newsletter to stay up to date on features and releases.</p>
-            
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email here" required>
-                <button type="submit" class="btn-subscribe">Subscribe</button>
-            </form>
-            <p class="privacy-note">By subscribing you agree with our <a href="#">Privacy Policy</a> and provide consent to receive updates from our company.</p>
-            <a href="mailto:info@stitcher.com" class="footer-email">info@stitcher.com</a>
-        </div>
-
-        <div class="footer-nav">
-            <div class="nav-col">
-                <h4>REAL TIME</h4>
-                <a href="#">How it works</a>
-                <a href="#">Impact</a>
-                <a href="#">Features</a>
-                <a href="#">FAQs</a>
-            </div>
-            <div class="nav-col">
-                <h4>CUSTOM</h4>
-                <a href="#">How it works</a>
-                <a href="#">Impact</a>
-                <a href="#">Features</a>
-                <a href="#">FAQs</a>
-            </div>
-            <div class="nav-col">
-                <h4>DESIGN STUDIO</h4>
-                <a href="#">Sewing Pattern</a>
-                <a href="#">3D Clothing Design</a>
-                <a href="#">Tech Pack</a>
-                <a href="#">Digital Fabric</a>
-                <a href="#">Digital Accessories</a>
-                <a href="#">Fashion Trend Forecasting</a>
-                <a href="#">Animal Dress</a>
-            </div>
-            <div class="nav-col">
-                <h4>COMPANY</h4>
-                <a href="#">Mission</a>
-                <a href="#">Impact</a>
-                <a href="#">History</a>
-                <a href="#">Work with us</a>
-            </div>
-            <div class="nav-col">
-                <h4>STUDY HUB</h4>
-                <a href="#">Case Study</a>
-                <a href="#">Article</a>
-                <a href="#">Podcast</a>
-                <a href="#">Blog Post</a>
-            </div>
-        </div>
-
-        <div class="footer-socials">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="#"><i class="fas fa-expand"></i></a>
-            <a href="#"><i class="fas fa-link"></i></a>
-            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-        </div>
-    </div>
-</footer>
+</main>
 
 
-<script src="realtime.js"></script>
+<div id="site-footer">
+    <!-- Footer will be loaded here -->
+</div>
+
+<script src="realtime.js"> </script>
+<script src="../header/header.js"> </script>
+
+<script>
+  fetch("../header/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("site-header").innerHTML = data;
+
+      // ✅ MANUAL INIT AFTER FETCH
+      initHeaderMenu();
+    });
+</script>
+
+<script>
+  fetch("../footer/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("site-footer").innerHTML = data;
+    })
+    .catch(err => console.error("Footer load error:", err));
+</script>
+
+
 </body>
 </html>

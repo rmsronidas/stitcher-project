@@ -1,18 +1,28 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const menuIcon = document.getElementById('menu-icon');
-    const navMenu = document.getElementById('nav-menu');
+function initHeaderMenu() {
+  const icon = document.querySelector('.icon-table');
+  const menu = document.getElementById('quickMenu');
 
-    menuIcon.addEventListener('click', function() {
-        navMenu.classList.toggle('show');
-        
-        // Toggle icon between bars and X
-        const icon = menuIcon.querySelector('i');
-        if (navMenu.classList.contains('show')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
+  if (!icon || !menu || icon.dataset.bound) return;
+
+  icon.dataset.bound = "true";
+
+  icon.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menu.classList.toggle('is-open');
+    document.body.classList.toggle('menu-open');
+  });
+
+  menu.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  document.addEventListener('click', () => {
+    menu.classList.remove('is-open');
+    document.body.classList.remove('menu-open');
+  });
+}
+
+/* ✅ AUTO INIT WHEN header.html OPENED DIRECTLY */
+document.addEventListener('DOMContentLoaded', () => {
+  initHeaderMenu();
 });
