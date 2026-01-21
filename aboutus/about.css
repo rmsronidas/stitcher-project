@@ -1,0 +1,389 @@
+.about-banner{
+  width: 100%;
+  min-height: 240px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #3a5a5f 0%, #7fb38a 50%, #a8f2b9 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 34px 22px;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* center block */
+.about-center{
+  text-align: center;
+  max-width: 760px;
+}
+
+.about-label{
+  margin: 0 0 10px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  font-size: 22px;
+}
+
+.about-title{
+  margin: 0 0 18px;
+  font-size: clamp(18px, 2.4vw, 30px);
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+/* button */
+.about-btn{
+  display: inline-block;
+  padding: 14px 34px;
+  border: 2px solid rgba(255,255,255,.85);
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: .02em;
+  background: rgba(255,255,255,.08);
+  transition: .2s ease;
+}
+
+.about-btn:hover{
+  background: rgba(255,255,255,.18);
+  transform: translateY(-2px);
+}
+
+/* dots */
+.about-dots{
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.about-dots span{
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.55);
+}
+
+.about-dots span.active{
+  background: #fff;
+  transform: scale(1.15);
+}
+
+/* side texts */
+.side-left{
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  color: #ff2a2a;
+  font-weight: 700;
+  letter-spacing: .06em;
+  font-size: 13px;
+  opacity: .95;
+}
+
+.side-right{
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 700;
+  opacity: .9;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px){
+  .side-right{ display:none; }
+  .side-left{ display:none; }
+  .about-btn{ width: 100%; max-width: 360px; }
+}
+.welcome-section{
+  background: #1d2228;
+  color: #fff;
+  padding: 70px 20px;
+}
+
+.welcome-wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.welcome-top{
+  margin: 0;
+  font-weight: 700;
+  font-size: 13px;
+  opacity: .95;
+}
+
+.welcome-top span{
+  color: #3fe3d6; /* teal like screenshot */
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+
+.welcome-desc{
+  margin: 18px auto 55px;
+  max-width: 720px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.75);
+}
+
+/* 4 feature blocks */
+.welcome-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  text-align: left;
+  margin-bottom: 55px;
+}
+
+.welcome-card h3{
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.welcome-card p{
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.68);
+}
+
+/* Our experience */
+.welcome-subtitle{
+  margin: 10px 0 34px;
+  font-size: 13px;
+  font-weight: 800;
+  opacity: .95;
+}
+
+.exp-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 90px;
+}
+
+.exp-item{
+  text-align: center;
+}
+
+.exp-number{
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.exp-item p{
+  margin: 0 auto;
+  max-width: 240px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.68);
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .welcome-grid{
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+  .exp-grid{
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 520px){
+  .welcome-grid{
+    grid-template-columns: 1fr;
+  }
+}
+.leadership{
+background: #1e232a;
+color: #fff;
+  padding: 70px 20px;
+}
+
+.team-section{
+  background: #1e232a;
+  color: #fff;
+  padding: 70px 20px;
+}
+
+.team-wrap{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-title{
+  font-size: 54px;
+  font-weight: 900;
+  margin: 0 0 10px;
+}
+
+.team-desc{
+  margin: 0 0 30px;
+  color: rgba(255,255,255,.75);
+  line-height: 1.6;
+}
+
+/* GRID */
+.team-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.team-card{
+  position: relative;
+}
+
+/* top name bar */
+.team-name{
+  width: 100%;
+  border: 1px solid rgba(140, 255, 190, .8);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-weight: 900;
+  letter-spacing: .03em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* image area */
+.team-photo{
+  position: relative;
+  height: 280px;
+  border: 1px solid rgba(140, 255, 190, .6);
+  background: rgba(0,0,0,.12);
+  overflow: hidden;
+}
+
+.team-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.05);
+  transform: scale(1);
+  transition: transform .25s ease;
+}
+
+/* overlay info (hidden by default) */
+.team-overlay{
+  position: absolute;
+  inset: 0;
+  padding: 18px;
+  background: rgba(0,0,0,.75);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.team-overlay h3{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.team-overlay .role{
+  margin: 0;
+  color: rgba(140, 255, 190, .95);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+
+.team-overlay .bio{
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255,255,255,.8);
+  line-height: 1.5;
+  max-width: 95%;
+}
+
+.overlay-actions{
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.overlay-actions a{
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.25);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  text-decoration: none;
+  transition: .2s ease;
+}
+
+.overlay-actions a:hover{
+  border-color: rgba(140, 255, 190, .8);
+  transform: translateY(-2px);
+}
+
+/* show overlay on hover */
+.team-photo:hover img{
+  transform: scale(1.06);
+}
+
+.team-photo:hover .team-overlay{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* footer row */
+.team-footer{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.team-roles p{
+  margin: 0;
+  font-size: 10px;
+  color: rgba(255,255,255,.6);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.team-plus{
+  width: 22px;
+  height: 22px;
+  border-radius: 3px;
+  background: transparent;
+  color: rgba(140, 255, 190, .95);
+  border: 1px solid rgba(140, 255, 190, .8);
+  cursor: pointer;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+}
+
+/* responsive */
+@media (max-width: 1100px){
+  .team-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px){
+  .team-title{ font-size: 38px; }
+  .team-grid{ grid-template-columns: 1fr; }
+  .team-photo{ height: 320px; }
+}

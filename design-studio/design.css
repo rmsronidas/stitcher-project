@@ -1,0 +1,55 @@
+.design-studio-banner{
+    height: 200px;
+  width: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #3f5f63 0%, #6ea786 55%, #a8f2b9 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* thin red divider line */
+
+
+.ds-center{
+  text-align: center;
+  color: #fff;
+}
+
+.ds-title{
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: .05em;
+}
+
+/* button */
+.ds-btn{
+  display: inline-block;
+  padding: 6px 18px;
+  border: 2px solid rgba(255,255,255,.85);
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: .03em;
+  background: rgba(255,255,255,.08);
+  transition: .2s ease;
+}
+
+.ds-btn:hover{
+  background: rgba(255,255,255,.18);
+  transform: translateY(-2px);
+}
+
+/* left vertical text */
+
+
+/* responsive */
+@media (max-width: 650px){
+  .design-studio-banner::after{ left: 80%; }
+  .ds-side-text{ display: none; }
+}

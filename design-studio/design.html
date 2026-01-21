@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stitcher Agency</title>
+    <link rel="stylesheet" href="../header/header.css">
+
+    <link rel="stylesheet" href="./design.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+
+<body>
+   <div id="site-header">
+    <!-- Header will be loaded here -->
+</div>
+
+<!-- DESIGN STUDIO BANNER -->
+<section class="design-studio-banner">
+
+  <div class="ds-center">
+    <h2 class="ds-title">DESIGN STUDIO</h2>
+    <a href="#" class="ds-btn">BUY NOW</a>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<script src="./design.js"> </script>
+<script src="../header/header.js"> </script>
+
+<script>
+  fetch("../header/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("site-header").innerHTML = data;
+
+      // ✅ MANUAL INIT AFTER FETCH
+      initHeaderMenu();
+    });
+</script>
+
+
+</body>
+</html>

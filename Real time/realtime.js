@@ -56,3 +56,89 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderDots();
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const acc = document.getElementById("flowAcc");
+  if (!acc) return;
+
+  const items = Array.from(acc.querySelectorAll(".flow-item"));
+
+  function isMobile(){
+    return window.matchMedia("(max-width: 1100px)").matches;
+  }
+
+  function openItem(item){
+    items.forEach(x => x.classList.remove("active"));
+    item.classList.add("active");
+  }
+
+  function closeAll(){
+    items.forEach(x => x.classList.remove("active"));
+  }
+
+  // click only on tab (better UX)
+  items.forEach(item => {
+    const tab = item.querySelector(".flow-tab");
+    tab.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      if (isMobile()){
+        // mobile: toggle open
+        const alreadyOpen = item.classList.contains("active");
+        closeAll();
+        if (!alreadyOpen) item.classList.add("active");
+      } else {
+        // desktop: always open clicked
+        openItem(item);
+      }
+    });
+  });
+
+  // prevent inside link click from toggling
+  acc.querySelectorAll("a, button").forEach(el => {
+    el.addEventListener("click", (e) => e.stopPropagation());
+  });
+
+  // initial state
+  if (isMobile()) closeAll();     // ✅ mobile: show only tabs
+  else openItem(items[0]);        // ✅ desktop: first open
+
+  // on resize: keep behavior correct
+  window.addEventListener("resize", () => {
+    if (isMobile()) closeAll();
+    else openItem(items[0]);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".realtime-page .faq-item");
+
+  items.forEach((item) => {
+    const btn = item.querySelector(".faq-question");
+    const icon = item.querySelector(".faq-icon");
+
+    btn.addEventListener("click", () => {
+      const isOpen = item.classList.contains("active");
+
+      // close all (accordion behavior)
+      items.forEach((it) => {
+        it.classList.remove("active");
+        const ic = it.querySelector(".faq-icon");
+        if (ic) ic.textContent = "+";
+        const b = it.querySelector(".faq-question");
+        if (b) b.setAttribute("aria-expanded", "false");
+      });
+
+      // open clicked one if it was closed
+      if (!isOpen) {
+        item.classList.add("active");
+        icon.textContent = "×";
+        btn.setAttribute("aria-expanded", "true");
+      }
+    });
+
+    // accessibility
+    btn.setAttribute("aria-expanded", "false");
+  });
+});
+
+
