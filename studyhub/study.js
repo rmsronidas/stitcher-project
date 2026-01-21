@@ -56,3 +56,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderDots();
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const acc = document.getElementById("flowAcc");
+  if (!acc) return;
+
+  const items = Array.from(acc.querySelectorAll(".flow-item"));
+
+  function isMobile(){
+    return window.matchMedia("(max-width: 1100px)").matches;
+  }
+
+  function openItem(item){
+    items.forEach(x => x.classList.remove("active"));
+    item.classList.add("active");
+  }
+
+  function closeAll(){
+    items.forEach(x => x.classList.remove("active"));
+  }
+
+  // click only on tab (better UX)
+  items.forEach(item => {
+    const tab = item.querySelector(".flow-tab");
+    tab.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      if (isMobile()){
+        // mobile: toggle open
+        const alreadyOpen = item.classList.contains("active");
+        closeAll();
+        if (!alreadyOpen) item.classList.add("active");
+      } else {
+        // desktop: always open clicked
+        openItem(item);
+      }
+    });
+  });
+
+  // prevent inside link click from toggling
+  acc.querySelectorAll("a, button").forEach(el => {
+    el.addEventListener("click", (e) => e.stopPropagation());
+  });
+
+  // initial state
+  if (isMobile()) closeAll();     // ✅ mobile: show only tabs
+  else openItem(items[0]);        // ✅ desktop: first open
+
+  // on resize: keep behavior correct
+  window.addEventListener("resize", () => {
+    if (isMobile()) closeAll();
+    else openItem(items[0]);
+  });
+});
+
