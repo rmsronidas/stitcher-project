@@ -24,9 +24,267 @@
     <a href="#" class="ds-btn">BUY NOW</a>
   </div>
 </section>
+<section class="filter-bar">
+  <div class="filter-wrap">
+
+    <!-- Search -->
+    <div class="search-row">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Find the items you're looking for" />
+    </div>
+
+    <!-- Filter Box -->
+    <div class="filter-box">
+      <p class="filter-title">Pricing Options</p>
+
+      <div class="filter-top">
+        <label class="chk">
+          <input type="checkbox" checked>
+          <span class="box"></span>
+          Paid
+        </label>
+
+        <label class="chk">
+          <input type="checkbox">
+          <span class="box"></span>
+          Free
+        </label>
+
+        <!-- Range slider -->
+        <div class="range-wrap">
+          <input id="priceRange" type="range" min="0" max="100" value="60">
+          <div class="range-values">
+            <span>0</span>
+            <span id="rangeVal">60</span>
+            <span>100</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-divider"></div>
+
+      <!-- Dropdowns row -->
+      <div class="filter-bottom">
+        <div class="select-group">
+          <label>Gender &amp; Age</label>
+          <select>
+            <option value="all">All</option>
+            <option>Men</option>
+            <option>Women</option>
+            <option>Kids</option>
+            <option>Baby</option>
+            <option>Animal</option>
+          </select>
+        </div>
+
+        <div class="select-group">
+          <label>Style</label>
+          <select>
+            <option value="all">All</option>
+            <option>Daily Casual</option>
+            <option>Streetwear</option>
+            <option>Gothic</option>
+            <option>Party</option>
+            <option>Anime</option>
+            <option>Traditional</option>
+            <option>Uniform</option>
+            <option>Formal</option>
+            <option>Workwear</option>
+            <option>Others</option>
+          </select>
+        </div>
+
+        <div class="select-group">
+          <label>Genres &amp; Moods</label>
+          <select>
+            <option value="all">All</option>
+            <option>Daily Casual</option>
+            <option>Streetwear</option>
+            <option>Gothic</option>
+            <option>Party</option>
+            <option>Anime</option>
+            <option>Traditional</option>
+            <option>Uniform</option>
+            <option>Formal</option>
+            <option>Workwear</option>
+            <option>Others</option>
+          </select>
+        </div>
+
+        <div class="select-group">
+          <label>Others</label>
+          <select>
+            <option value="all">All</option>
+            <option>Knit</option>
+            <option>Woven</option>
+            <option>Denim</option>
+            <option>Cap</option>
+            <option>Lingerie</option>
+            <option>Shoes</option>
+            <option>Bag</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="curator-section">
+  <div class="curator-head">
+    <h2>CURATOR'S PICK</h2>
+    <a class="show-more" href="#">Show More &gt;</a>
+  </div>
+
+  <div class="curator-grid">
+
+    <!-- CARD 1 -->
+    <article class="product-card">
+      <div class="product-media">
+        <div class="rating">
+          <span class="stars">★★★★★</span>
+          <span class="count">(714)</span>
+        </div>
+
+        <div class="media-icons">
+          <button class="icon-btn" aria-label="Favorite">♡</button>
+          <button class="icon-btn" aria-label="Info">i</button>
+          <button class="icon-btn" aria-label="Share">↗</button>
+        </div>
+
+        <button class="nav-arrow left" aria-label="Previous">‹</button>
+        <button class="nav-arrow right" aria-label="Next">›</button>
+
+        <div class="dots">
+          <span class="active"></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <h3 class="product-title">Button Down Dress ( Times selling)</h3>
+      <div class="price-row">
+        <span class="price">SUD $ 14.00</span>
+      </div>
+      <a href="#" class="buy-btn">BUY NOW</a>
+    </article>
+
+    <!-- CARD 2 -->
+    <article class="product-card">
+      <div class="product-media">
+        <div class="rating">
+          <span class="stars">★★★★★</span>
+          <span class="count">(714)</span>
+        </div>
+
+        <div class="media-icons">
+          <button class="icon-btn" aria-label="Favorite">♡</button>
+          <button class="icon-btn" aria-label="Info">i</button>
+          <button class="icon-btn" aria-label="Share">↗</button>
+        </div>
+
+        <button class="nav-arrow left" aria-label="Previous">‹</button>
+        <button class="nav-arrow right" aria-label="Next">›</button>
+
+        <div class="dots">
+          <span></span><span class="active"></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <h3 class="product-title">Button Down Dress</h3>
+      <div class="price-row">
+        <span class="price">SUD $ 14.00</span>
+      </div>
+      <a href="#" class="buy-btn">BUY NOW</a>
+    </article>
+
+    <!-- CARD 3 (Coming soon + sale pricing) -->
+    <article class="product-card is-soon">
+      <div class="product-media">
+        <div class="rating">
+          <span class="stars">★★★★★</span>
+          <span class="count">(714)</span>
+        </div>
+
+        <div class="media-icons">
+          <button class="icon-btn" aria-label="Favorite">♡</button>
+          <button class="icon-btn" aria-label="Info">i</button>
+          <button class="icon-btn" aria-label="Share">↗</button>
+        </div>
+
+        <button class="nav-arrow left" aria-label="Previous">‹</button>
+        <button class="nav-arrow right" aria-label="Next">›</button>
+
+        <div class="dots">
+          <span></span><span></span><span class="active"></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="soon-overlay">Coming soon</div>
+      </div>
+
+      <h3 class="product-title">Button Down Dress</h3>
+      <div class="price-row">
+        <span class="price">SUD $ 0.00</span>
+        <span class="old-price">$11.00</span>
+      </div>
+      <a href="#" class="buy-btn disabled" tabindex="-1">BUY NOW</a>
+    </article>
+
+    <!-- CARD 4 (Coming soon) -->
+    <article class="product-card is-soon">
+      <div class="product-media_confirm">
+        <div class="rating">
+          <span class="stars">★★★★★</span>
+          <span class="count">(714)</span>
+        </div>
+
+        <div class="media-icons">
+          <button class="icon-btn" aria-label="Favorite">♡</button>
+          <button class="icon-btn" aria-label="Info">i</button>
+          <button class="icon-btn" aria-label="Share">↗</button>
+        </div>
+
+        <button class="nav-arrow left" aria-label="Previous">‹</button>
+        <button class="nav-arrow right" aria-label="Next">›</button>
+
+        <div class="dots">
+          <span></span><span></span><span></span><span class="active"></span><span></span><span></span>
+        </div>
+
+        <!-- <div class="soon-overlay">Coming soon</div> -->
+      </div>
+
+      <h3 class="product-title">Button Down Dress</h3>
+      <div class="price-row">
+        <span class="price">SUD $ 0.00</span>
+      </div>
+      <a href="#" class="buy-btn disabled" tabindex="-1">BUY NOW</a>
+    </article>
+
+  </div>
+</section>
 
 
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <div class="chat-bubble">
+                <i class="fas fa-comment-dots"></i>
+            </div>
+            <nav class="footer-links">
+                <a href="#">PRIVACY</a>
+                <a href="#">TERMS</a>
+                <a href="#">LEGAL</a>
+                <a href="#">CAREER</a>
+            </nav>
+        </div>
 
+        <div class="footer-right">
+            <div class="language-selector">
+                <span>ENGLISH</span>
+                <i class="fas fa-caret-down"></i>
+            </div>
+        </div>
+    </div>
+</footer>
 
 
 
