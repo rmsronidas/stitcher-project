@@ -1,0 +1,213 @@
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  min-height:100vh;
+  background:#0f131a;
+  color:#fff;
+}
+
+/* ✅ Landing page (behind popup) */
+.landing{
+  min-height: 100vh;
+  padding: 24px;
+  background: radial-gradient(circle at 30% 10%, #2a2f3a 0%, #151922 45%, #0f131a 100%);
+}
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 10px 0;
+}
+.hero{
+  margin-top: 30px;
+  max-width: 700px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.85);
+}
+
+/* ✅ Open button */
+.open-btn{
+  background: #121826;
+  border: 1px solid rgba(120,255,200,.35);
+  color: #dff7ee;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ✅ Popup Wrapper (NOT fullscreen cover) */
+.popup-wrap{
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  display: none; /* JS open */
+  z-index: 999;
+}
+
+/* show */
+.popup-wrap.active{
+  display: block;
+}
+
+/* ✅ popup box */
+.popup{
+  width: 320px;
+  background: linear-gradient(180deg, rgba(35,40,52,.95), rgba(18,22,32,.95));
+  border-radius: 10px;
+  border: 2px solid rgba(130, 255, 210, 0.65);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.08) inset,
+    0 0 18px rgba(130,255,210,.18);
+  padding: 18px 16px 16px;
+  position: relative;
+}
+
+/* close */
+.close-btn{
+  position:absolute;
+  right:10px;
+  top:8px;
+  width:34px;
+  height:34px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background: rgba(255,255,255,.06);
+  color:#fff;
+  font-size:24px;
+}
+.close-btn:hover{ background: rgba(255,255,255,.10); }
+
+/* logo */
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:center;
+  margin-top: 6px;
+  margin-bottom: 14px;
+  text-align:center;
+}
+.logo-mark{
+  width:34px;
+  height:34px;
+  position:relative;
+  transform: rotate(35deg);
+}
+.logo-mark::before,
+.logo-mark::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  margin:auto;
+  width:10px;
+  border-radius:6px;
+  background: rgba(120,255,200,0.85);
+}
+.logo-mark::before{ top:2px; height:28px; }
+.logo-mark::after{
+  top:7px; left:14px; width:10px; height:20px;
+  opacity:.75;
+}
+
+.brand h2{ font-size:14px; letter-spacing:1.5px; font-weight:800; }
+.brand p{
+  font-size:9px;
+  margin-top:3px;
+  color: rgba(255,255,255,.75);
+  letter-spacing:.6px;
+}
+
+/* inputs */
+input{
+  width:100%;
+  height:30px;
+  margin-bottom:10px;
+  border-radius:3px;
+  border:1px solid rgba(255,255,255,.15);
+  outline:none;
+  padding:0 10px;
+  background:#fff;
+  color:#0b0f16;
+  font-size:12px;
+}
+
+/* remember */
+.checkbox{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:11px;
+  color: rgba(255,255,255,.85);
+  margin: 2px 0 10px;
+}
+.checkbox input{ width:14px; height:14px; margin:0; }
+
+/* sign button */
+.sign-btn{
+  width:100%;
+  height:32px;
+  border:none;
+  border-radius:3px;
+  cursor:pointer;
+  font-weight:800;
+  letter-spacing:.6px;
+  background:#bfe8d9;
+  color:#0a0f16;
+}
+
+/* ✅ action boxes (forgot + signup) */
+.action-box{
+  display:block;
+  text-align:center;
+  margin-top:10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.12);
+  color: rgba(255,255,255,.88);
+  text-decoration:none;
+}
+.action-box span{ color:#77ffd0; font-weight:700; }
+.action-box:hover{ background: rgba(255,255,255,.06); }
+
+/* socials */
+.social{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:12px;
+}
+.social-btn{
+  width:34px; height:30px;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-size:14px;
+}
+.google{ background:#db4437; }
+.linkedin{ background:#0a66c2; }
+.facebook{ background:#1877f2; }
+
+.msg{
+  margin-top:10px;
+  text-align:center;
+  font-size:11px;
+  min-height: 14px;
+  color: rgba(255,255,255,.85);
+}
+
+/* ✅ responsive */
+@media (max-width: 500px){
+  .popup-wrap{
+    top: 14px;
+    right: 14px;
+    left: 14px;
+  }
+  .popup{ width: 100%; }
+}

@@ -5,14 +5,13 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Stitcher Agency</title>
-<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="assets/favicon.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="assets/favicon.png" rel="apple-touch-icon"/>
-<link rel="stylesheet" href="./footer/footer.css"/>
+<link href="./assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="./assets/favicon.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="./assets/favicon.png" rel="apple-touch-icon"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link href="./styles.css" rel="stylesheet"/>
-<link rel="stylesheet" href="./header/header.html">
-
+<link rel="stylesheet" href="../header/header.css">
+<link rel="stylesheet" href="../footer/footer.css">
 </head>
 <body>
 
@@ -138,6 +137,8 @@
 </div>
 </div>
 </section>
+
+
 
 <!-- DUO PANELS -->
 <section class="duo container">
@@ -330,18 +331,23 @@
 <script src="./header/header.js"></script>
 
 <script>
-  fetch("../header/header.html")
+  fetch("./header/header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("site-header").innerHTML = data;
 
-      // ✅ MANUAL INIT AFTER FETCH
-      initHeaderMenu();
-    });
+      // run header JS after header is injected
+      if (typeof initHeader === "function") {
+        initHeader();
+      } else {
+        console.error("initHeader() not found");
+      }
+    })
+    .catch(err => console.error("Header load error:", err));
 </script>
 
 <script>
-  fetch("../footer/footer.html")
+  fetch("./footer/footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("site-footer").innerHTML = data;

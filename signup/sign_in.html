@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In Popup</title>
+  <link rel="stylesheet" href="./sign_in.css" />
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ✅ Your Landing Page Content -->
+    <header class="topbar">
+      <h1>My Landing Page</h1>
+      <button class="open-btn" id="openPopup">Open Sign In</button>
+    </header>
+
+    <section class="hero">
+      <h2>Landing page content will show behind the popup ✅</h2>
+      <p>Ei area te tomar actual landing page content thakbe.</p>
+    </section>
+  </main>
+
+
+  <!-- ✅ Popup (No fullscreen cover) -->
+  <div class="popup-wrap" id="popupWrap" aria-hidden="true">
+    <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+
+      <button class="close-btn" id="closePopup" aria-label="Close">&times;</button>
+
+      <!-- Logo -->
+      <div class="logo-wrap">
+        <div class="logo-mark" aria-hidden="true"></div>
+        <div class="brand">
+          <h2 id="popupTitle">STITCHER</h2>
+          <p>ARCHIVE & REVIEW YOUR 3D GARMENTS</p>
+        </div>
+      </div>
+
+      <!-- Inputs -->
+      <form id="loginForm" novalidate>
+        <input id="email" type="email" placeholder="Email" autocomplete="email" />
+        <input id="password" type="password" placeholder="Password" autocomplete="current-password" />
+
+        <label class="checkbox">
+          <input type="checkbox" id="remember" />
+          <span>Remember me</span>
+        </label>
+
+        <button class="sign-btn" type="submit">SIGN IN</button>
+
+        <!-- ✅ Forgot password "box" -->
+        <a class="action-box" href="#" id="forgotLink">
+          Forgot your password?
+        </a>
+
+        <!-- ✅ Sign up "box" -->
+        <a class="action-box" href="#" id="signupLink">
+          Don't have an account? <span>Sign up</span>
+        </a>
+
+        <!-- Social -->
+        <div class="social">
+          <button type="button" class="social-btn google" aria-label="Google">
+            <i class="fa-brands fa-google"></i>
+          </button>
+          <button type="button" class="social-btn linkedin" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </button>
+          <button type="button" class="social-btn facebook" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </button>
+        </div>
+
+        <p class="msg" id="msg"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="./sign_in.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
   width: 100%;
   border-radius: 6px;
   background: linear-gradient(90deg, #3f5f63 0%, #6ea786 55%, #a8f2b9 100%);
-  position: relative;
+  position: static;
   display: flex;
   align-items: center;
   justify-content: center;

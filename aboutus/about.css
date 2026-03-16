@@ -3,7 +3,7 @@
   min-height: 240px;
   border-radius: 6px;
   background: linear-gradient(90deg, #3a5a5f 0%, #7fb38a 50%, #a8f2b9 100%);
-  position: relative;
+  position: static;
   display: flex;
   align-items: center;
   justify-content: center;
