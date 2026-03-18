@@ -44,7 +44,98 @@
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const acc = document.getElementById("flowAcc");
+  if (!acc) return;
 
+  const items = Array.from(acc.querySelectorAll(".flow-item"));
+
+  function isMobile() {
+    return window.matchMedia("(max-width: 980px)").matches;
+  }
+
+  function setExpandedState() {
+    items.forEach(item => {
+      const tab = item.querySelector(".flow-tab");
+      if (!tab) return;
+      tab.setAttribute(
+        "aria-expanded",
+        item.classList.contains("active") ? "true" : "false"
+      );
+    });
+  }
+
+  function openItem(item) {
+    items.forEach(el => el.classList.remove("active"));
+    item.classList.add("active");
+    setExpandedState();
+  }
+
+  function closeAll() {
+    items.forEach(el => el.classList.remove("active"));
+    setExpandedState();
+  }
+
+  items.forEach(item => {
+    const tab = item.querySelector(".flow-tab");
+    if (!tab) return;
+
+    tab.addEventListener("click", () => {
+      if (isMobile()) {
+        const isOpen = item.classList.contains("active");
+        closeAll();
+        if (!isOpen) item.classList.add("active");
+        setExpandedState();
+      } else {
+        openItem(item);
+      }
+    });
+
+    tab.addEventListener("keydown", (e) => {
+      const currentIndex = items.indexOf(item);
+
+      if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+        e.preventDefault();
+        const next = items[(currentIndex + 1) % items.length];
+        next.querySelector(".flow-tab")?.focus();
+        if (!isMobile()) openItem(next);
+      }
+
+      if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+        e.preventDefault();
+        const prev = items[(currentIndex - 1 + items.length) % items.length];
+        prev.querySelector(".flow-tab")?.focus();
+        if (!isMobile()) openItem(prev);
+      }
+
+      if ((e.key === "Enter" || e.key === " ") && isMobile()) {
+        e.preventDefault();
+        const isOpen = item.classList.contains("active");
+        closeAll();
+        if (!isOpen) item.classList.add("active");
+        setExpandedState();
+      }
+    });
+  });
+
+  function applyInitialState() {
+    if (isMobile()) {
+      closeAll();
+    } else {
+      openItem(items[0]);
+    }
+  }
+
+  applyInitialState();
+
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      applyInitialState();
+    }, 120);
+  });
+});
 
 
 

@@ -8,7 +8,7 @@ function initHeader() {
   const mobileDropdownToggle = document.getElementById("mobileDropdownToggle");
   const desktopDropdown = document.querySelector(".dropdown");
   const desktopDropdownToggle = document.querySelector(".dropdown-toggle");
-
+  
   if (!menuToggle || !mobileMenu || !mobileOverlay) {
     console.log("Header elements not found");
     return;
@@ -24,6 +24,8 @@ function initHeader() {
     menuToggle.setAttribute("aria-expanded", "true");
     mobileMenu.setAttribute("aria-hidden", "false");
   }
+
+
 
   function closeMobileMenu() {
     mobileMenu.classList.remove("is-open");
